@@ -1,0 +1,101 @@
+#panel {
+    width: 600px; 
+    margin: 0 auto; 
+    padding: 15px 0 0;
+    background: #fff;
+    border: 1px solid #006699;
+    font: 16px calibri;
+    letter-spacing: -1px;
+    -webkit-box-shadow: 0 0 2px #006699; 
+    -moz-box-shadow: 0 0 2px #006699; 
+    box-shadow: 0 0 2px #006699;
+}
+
+form {
+    margin: 0;
+}
+
+#username_label{
+    display: block;
+    width: 550px;
+    padding: 10px 20px;
+    color: black;
+    font-size: 17px;
+    text-align: center;
+    text-shadow: 0 0 1px silver;
+}
+
+#password_label{
+    display: block;
+    width: 550px;
+    padding: 10px 20px;
+    color: black;
+    font-size: 17px;
+    text-align: center;
+    text-shadow: 0 0 1px silver;
+}
+	
+#username, #password {
+    display: block;
+    width: 360px; 
+    margin: 0 auto;
+    padding: 10px 5px;
+    border: 1px solid #006699;
+    outline: 5px solid #bfd6e2;
+    font-size: 16px;
+}
+
+#username:focus, #password:focus {
+    outline: 5px solid #7e9dad;
+}
+	
+#lower {
+    background: #006699;
+    width: 560px;
+    height: 50px;
+    padding: 5px 20px;
+    margin-top: 30px;
+}
+
+input[type="submit"] {
+    width: 90px;
+    padding: 5px 13px;
+    border: 1px solid #000099;
+    color: white;
+    text-shadow: 0 0 1px black;
+    background: #003399;
+    position: relative;
+    left: 225px;
+    top: 13px;
+}
+
+input[type="radio"] {
+    position: relative;
+    top: 13px;
+}
+
+#employee_label, #proprietor_label, #auditor_label{
+    color: white;
+    text-shadow: 0 0 1px black;
+    position: relative;
+    top: 11px;  
+}
+
+#panel, input[type="submit"] {
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+}
+
+footer{
+    position:absolute;
+	bottom:0;
+	width:100%;
+    height: 70px;
+}
+
+footer p{
+    text-align: center;
+    color: #888888;
+    margin-top: 30px;
+}
