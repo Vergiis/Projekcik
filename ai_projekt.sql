@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 22 Gru 2020, 12:54
+-- Czas generowania: 22 Gru 2020, 18:39
 -- Wersja serwera: 10.1.37-MariaDB
 -- Wersja PHP: 7.2.12
 
@@ -115,6 +115,7 @@ CREATE TABLE `users` (
   `user_firstName` varchar(50) NOT NULL,
   `user_lastName` varchar(50) NOT NULL,
   `user_password` varchar(255) NOT NULL,
+  `user_salt` varchar(10) NOT NULL,
   `user_role` varchar(10) NOT NULL,
   `user_login` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -123,8 +124,8 @@ CREATE TABLE `users` (
 -- Zrzut danych tabeli `users`
 --
 
-INSERT INTO `users` (`user_id`, `user_firstName`, `user_lastName`, `user_password`, `user_role`, `user_login`) VALUES
-(1, 'xx', 'yy', '202cb962ac59075b964b07152d234b70', 'pracownik ', 'xx');
+INSERT INTO `users` (`user_id`, `user_firstName`, `user_lastName`, `user_password`, `user_salt`, `user_role`, `user_login`) VALUES
+(1, 'Adam', 'Polak', '3057a59f23d72bf02540407618e0201846af58dadfb4676aa700a355b5f7cc4e', '72kaj@xxa2', 'admin', 'xx');
 
 --
 -- Indeksy dla zrzutów tabel
