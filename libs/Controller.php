@@ -1,6 +1,8 @@
 <?php
 
 abstract class Controller{
+    protected $view;
+
 	public function redirect($url) {
         header("location: ".$url);
 	}

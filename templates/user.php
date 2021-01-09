@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<link rel="stylesheet" href="templates/styles/style_logowania.css">
-<html lang="pl"></html>
-<head>
-    <meta charset="UTF-8">
-    <title>M&M - Mini-Company Manager</title>
-</head>
-<body>
+    
+<?php if(isset($_GET['task']) && $_GET['task']=='addDevices') { 
+    require_once 'addDevices.php';
+} 
+else if(isset($_GET['task']) && $_GET['task']=='myDevices') { 
+    require_once 'myDevices.php';
+} 
+else if(isset($_GET['task']) && $_GET['task']=='addLicences') { 
+    require_once 'addLicences.php';
+} 
+else if(isset($_GET['task']) && $_GET['task']=='myLicences') { 
+    require_once 'myLicences.php';
+} 
+else if(isset($_GET['task']) && $_GET['task']=='addInvoices') { 
+    require_once 'addInvoices.php';
+}
+else { ?>
     <div id="panel">
         <p><b>Role: </b>
             <?php echo $this->get('user_role'); ?>
@@ -22,8 +31,4 @@
             </form>
         </div>
     </div>
-</body>
-<footer>
-    <p>&copy; 2020 M&M - Mini-Company Manager</p>
-</footer>
-</html>
+<?php } ?>

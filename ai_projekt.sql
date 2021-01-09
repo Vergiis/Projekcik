@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Czas generowania: 22 Gru 2020, 18:39
+-- Czas generowania: 09 Sty 2021, 15:43
 -- Wersja serwera: 10.1.37-MariaDB
 -- Wersja PHP: 7.2.12
 
@@ -48,10 +48,17 @@ CREATE TABLE `devices` (
   `device_buyDate` date NOT NULL,
   `device_invoiceId` int(11) NOT NULL,
   `device_warrantyExpiryDate` date NOT NULL,
-  `device_nettoValue` decimal(10,0) NOT NULL,
+  `device_nettoValue` decimal(10,2) NOT NULL,
   `device_ownerId` int(11) NOT NULL,
   `device_notes` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `devices`
+--
+
+INSERT INTO `devices` (`device_id`, `device_code`, `device_name`, `device_serialNumber`, `device_buyDate`, `device_invoiceId`, `device_warrantyExpiryDate`, `device_nettoValue`, `device_ownerId`, `device_notes`) VALUES
+(1, 'aa', 'ee', '22', '2021-01-28', 44, '2021-01-23', '11.00', 1, 'aa');
 
 -- --------------------------------------------------------
 
@@ -78,12 +85,21 @@ CREATE TABLE `invoices` (
   `invoice_type` varchar(10) NOT NULL,
   `invoice_identifier` varchar(50) NOT NULL,
   `client_id` int(11) NOT NULL,
-  `invoice_nettoValue` decimal(10,0) NOT NULL,
-  `invoice_vat` decimal(10,0) NOT NULL,
-  `invoite_bruttoValue` decimal(10,0) NOT NULL,
+  `invoice_nettoValue` decimal(10,2) NOT NULL,
+  `invoice_vat` decimal(10,2) NOT NULL,
+  `invoite_bruttoValue` decimal(10,2) NOT NULL,
   `invoice_currencyType` varchar(3) NOT NULL,
   `invoice_convertedValue` decimal(10,0) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `invoices`
+--
+
+INSERT INTO `invoices` (`invoice_id`, `invoice_type`, `invoice_identifier`, `client_id`, `invoice_nettoValue`, `invoice_vat`, `invoite_bruttoValue`, `invoice_currencyType`, `invoice_convertedValue`) VALUES
+(1, 'buy', '562564', 213124, '44.10', '21.00', '3.10', 'GBP', '555'),
+(2, 'sale', '2434', 111, '4.30', '2.10', '333.10', 'GBP', '11'),
+(3, '', '534545345345', 23432, '432.00', '22.00', '4.00', 'USD', '2');
 
 -- --------------------------------------------------------
 
@@ -103,6 +119,15 @@ CREATE TABLE `licences` (
   `licence_userId` int(11) NOT NULL,
   `licence_notes` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Zrzut danych tabeli `licences`
+--
+
+INSERT INTO `licences` (`licence_id`, `licence_number`, `licence_nameAndDesc`, `licence_serialKey`, `licence_orderDate`, `licence_invoiceId`, `licence_supportExpiryDate`, `licence_expiryDate`, `licence_userId`, `licence_notes`) VALUES
+(1, '22', 'aa', '33', '2021-01-12', 2, '2021-01-13', '2021-01-16', 1, 'aaa'),
+(2, '1', '1', '33', '2021-01-14', 412, '2021-01-22', '2021-01-19', 1, 'aaaad'),
+(3, '22', '22', '1111', '2021-01-22', 444, '2021-01-21', '2021-01-21', 1, 'afsd22');
 
 -- --------------------------------------------------------
 
@@ -125,7 +150,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `user_firstName`, `user_lastName`, `user_password`, `user_salt`, `user_role`, `user_login`) VALUES
-(1, 'Adam', 'Polak', '3057a59f23d72bf02540407618e0201846af58dadfb4676aa700a355b5f7cc4e', '72kaj@xxa2', 'admin', 'xx');
+(1, 'Adam', 'Polak', '202cb962ac59075b964b07152d234b70', '72kaj@xxa2', 'admin', 'xx');
 
 --
 -- Indeksy dla zrzutów tabel
@@ -136,6 +161,12 @@ INSERT INTO `users` (`user_id`, `user_firstName`, `user_lastName`, `user_passwor
 --
 ALTER TABLE `clients`
   ADD PRIMARY KEY (`client_id`);
+
+--
+-- Indeksy dla tabeli `devices`
+--
+ALTER TABLE `devices`
+  ADD PRIMARY KEY (`device_id`);
 
 --
 -- Indeksy dla tabeli `documents`
@@ -172,6 +203,12 @@ ALTER TABLE `clients`
   MODIFY `client_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT dla tabeli `devices`
+--
+ALTER TABLE `devices`
+  MODIFY `device_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
 -- AUTO_INCREMENT dla tabeli `documents`
 --
 ALTER TABLE `documents`
@@ -181,13 +218,13 @@ ALTER TABLE `documents`
 -- AUTO_INCREMENT dla tabeli `invoices`
 --
 ALTER TABLE `invoices`
-  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `invoice_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `licences`
 --
 ALTER TABLE `licences`
-  MODIFY `licence_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `licence_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT dla tabeli `users`

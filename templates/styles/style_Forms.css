@@ -1,0 +1,62 @@
+.myinput
+{
+    height: 25px;
+    width: 62%;
+    margin-right: 20px; 
+    margin-top: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #006699;
+    outline: 5px solid #bfd6e2;
+    font-size: 16px;
+}
+
+#device_code:focus, #device_name:focus, #device_serialNumber:focus, #device_buyDate:focus, #device_invoiceId:focus, #device_warrantyExpiryDate:focus, #device_nettoValue:focus, #device_ownerId:focus, #device_notes:focus
+{
+    outline: 5px solid #7e9dad; 
+}
+
+#device_code_label, #device_name_label, #device_serialNumber_label, #device_buyDate_label, #device_invoiceId_label, #device_warrantyExpiryDate_label, #device_nettoValue_label, #device_ownerId_label, #device_notes_label
+{
+    width: 27%;
+    float: left;
+    margin-left: 12px; 
+    margin-top: 15px;
+    margin-bottom: 19px;
+    color: black;
+    font-size: 17px;
+    text-shadow: 0 0 1px silver;
+}
+
+#licence_number:focus, #licence_nameAndDesc:focus, #licence_serialKey:focus, #licence_orderDate:focus, #licence_invoiceId:focus, #licence_supportExpiryDate:focus, #licence_expiryDate:focus, #licence_userId:focus, #licence_notes:focus
+{
+    outline: 5px solid #7e9dad; 
+}
+
+#licence_number_label, #licence_nameAndDesc_label, #licence_serialKey_label, #licence_orderDate_label, #licence_invoiceId_label, #licence_supportExpiryDate_label, #licence_expiryDate_label, #licence_userId_label, #licence_notes_label
+{
+    width: 27%;
+    float: left;
+    margin-left: 12px; 
+    margin-top: 14px;
+    margin-bottom: 17px;
+    color: black;
+    font-size: 17px;
+    text-shadow: 0 0 1px silver;
+}
+
+#invoice_identifier:focus, #client_name:focus, #client_vatId:focus, #invoice_nettoValue:focus, #invoice_vat:focus, #invoite_bruttoValue:focus, #invoice_currencyType:focus, #invoice_convertedValue:focus
+{
+    outline: 5px solid #7e9dad;
+}
+
+#invoice_identifier_label, #client_name_label, #client_vatId_label, #invoice_nettoValue_label, #invoice_vat_label, #invoite_bruttoValue_label, #invoice_currencyType_label, #invoice_convertedValue_label, #file_label
+{
+    width: 25%;
+    float: left;
+    margin-left: 12px; 
+    margin-top: 18px;
+    margin-bottom: 19px;
+    color: black;
+    font-size: 17px;
+    text-shadow: 0 0 1px silver;
+}

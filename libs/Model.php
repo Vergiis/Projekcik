@@ -38,5 +38,19 @@ abstract class Model{
  
         return $data;
     }
+
+    public function insert($query) {
+        try{
+            $this->pdo->beginTransaction();
+            $stm=$this->pdo->prepare($query);
+            $stm->execute();
+            $this->pdo->commit();
+            return true;
+        }
+        catch(PDOException $e){
+            $this->pdo->rollBack();
+            return false;
+          }
+    }
 }
 ?>
