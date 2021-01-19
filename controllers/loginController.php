@@ -20,6 +20,13 @@ class loginController extends Controller{
         unset($_SESSION['activeUser']);
         $this->redirect("?");
     }
+
+    public function addNew(){
+        $model=$this->loadModel('user'); 
+        $model->add($_POST['user_Fname'],$_POST['user_Lname'],$_POST['user_pass'],$_POST['user_login'],$_POST['user_role']);
+        
+        $this->redirect("?");
+    }
 }
 
 ?>

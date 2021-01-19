@@ -14,6 +14,18 @@ else if(isset($_GET['task']) && $_GET['task']=='myLicences') {
 else if(isset($_GET['task']) && $_GET['task']=='addInvoices') { 
     require_once 'addInvoices.php';
 }
+else if(isset($_GET['task']) && $_GET['task']=='myInvoices') { 
+    if(isset($_GET['action']) && $_GET['action']=='getStats'){
+        require_once 'statsInvoices.php';
+    }
+    else{
+        require_once 'myInvoices.php';
+    }
+    
+}
+else if(isset($_GET['task']) && $_GET['task']=='addUser') { 
+    require_once 'addUser.php';
+}
 else { ?>
     <div id="panel">
         <p><b>Role: </b>

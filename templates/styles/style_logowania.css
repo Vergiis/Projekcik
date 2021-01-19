@@ -71,8 +71,7 @@ input[type="submit"] {
     text-shadow: 0 0 1px black;
     background: #003399;
     position: relative;
-    left: 225px;
-    top: 13px;
+
 }
 
 input[type="radio"] {

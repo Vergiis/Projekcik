@@ -12,5 +12,11 @@ class userModel extends Model{
         else return "";
     }
     
+    public function add($fName,$lName,$pass,$login,$role) {
+        $pass=md5($pass);
+        $q="INSERT INTO `users` (`user_firstName`, `user_lastName`, `user_password`, `user_salt`, `user_role`, `user_login`) VALUES ('".$fName."', '".$lName."', '".$pass."', 'xxx', '".$role."', '".$login."');";
+        $this->insert($q);
+    }
+
 }
 ?>

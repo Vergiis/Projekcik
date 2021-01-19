@@ -60,3 +60,23 @@
     font-size: 17px;
     text-shadow: 0 0 1px silver;
 }
+
+#tabela{
+    width: 60%;
+    margin-left: 20%; 
+    margin-top: 3%;
+}
+
+td{
+    border: 1px solid #006699;
+    margin: 0;
+    padding: 0;
+}
+
+.top{
+    border: 1px solid #006699;
+    background: #006699;
+    color: white;
+    font-size: 17px;
+    font-weight: normal;
+}

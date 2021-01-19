@@ -8,11 +8,34 @@ class invoicesController extends Controller{
     }
 
     public function getAll(){
-        $model=$this->loadModel('devices'); 
+        $model=$this->loadModel('invoices'); 
         $data=$model->getAll();
 
         $view=$this->loadView('main');
-        $view->myDevices($data);
+        $view->myInvoices($data);
+        return $view;
+    }
+
+    public function getSearched(){
+        $model=$this->loadModel('invoices');
+
+        $data=$model->getSearched($_POST['invoice_to_search'],$_POST['type']);
+        
+        $view=$this->loadView('main');
+        $view->myInvoices($data);
+        return $view;
+    }
+
+    public function openInvoices(){
+        $this->redirect($_POST['details']);
+    }
+
+    public function getStats(){
+        $model=$this->loadModel('invoices'); 
+        $data=$model->getAll();
+
+        $view=$this->loadView('main');
+        $view->myInvoices($data);
         return $view;
     }
 }

@@ -39,6 +39,17 @@ class appController extends Controller{
             $f=$_GET['action'];
             $ob->$f();
         }
+        else if(isset($_GET['task']) && $_GET['task']=='myInvoices' && isset($_GET['action'])) {
+            $ob = new invoicesController();
+            $f=$_GET['action'];
+            $v=$ob->$f();
+            $v->login($_SESSION['activeUser']);
+        }
+        else if(isset($_GET['task']) && $_GET['task']=='addUser' && isset($_GET['action'])) {
+            $ob = new loginController();
+            $f=$_GET['action'];
+            $ob->$f();
+        }
         else{
             if(isset($_SESSION['activeUser'])){
                 $view=$this->loadView('main');

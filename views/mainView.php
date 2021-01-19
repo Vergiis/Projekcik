@@ -23,5 +23,8 @@ class mainView extends View{
     public function myLicences($data) {
         $this->set("user_licences",$data);
     }
+    public function myInvoices($data) {
+        $this->set("user_invoices",$data);
+    }
 }
 ?>

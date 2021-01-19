@@ -15,6 +15,16 @@ class licencesController extends Controller{
         $view->myLicences($data);
         return $view;
     }
+
+    public function getSearched(){
+        $model=$this->loadModel('licences');
+
+        $data=$model->getSearched($_POST['invoice_to_search'],$_POST['type']);
+        
+        $view=$this->loadView('main');
+        $view->myLicences($data);
+        return $view;
+    }
 }
 
 ?>

@@ -15,6 +15,16 @@ class devicesController extends Controller{
         $view->myDevices($data);
         return $view;
     }
+
+    public function getSearched(){
+        $model=$this->loadModel('devices');
+
+        $data=$model->getSearched($_POST['invoice_to_search'],$_POST['type']);
+        
+        $view=$this->loadView('main');
+        $view->myDevices($data);
+        return $view;
+    }
 }
 
 ?>

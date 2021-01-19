@@ -11,8 +11,19 @@ class licencesModel extends Model{
     
     public function getAll() {
         $userId=$_SESSION['activeUser']['user_id'];
-        $data=$this->select("SELECT * FROM `licences` WHERE `licence_userId`='".$userId."'");
-        
+        $userRole=$_SESSION['activeUser']['user_role'];
+        if($userRole=="admin" || $userRole=="pracownik" || $userRole=="audytor"){
+            $data=$this->select("SELECT * FROM `licences` JOIN users ON users.user_id=licences.licence_userId");
+        }
+        else{
+            $data=$this->select("SELECT * FROM `licences` JOIN users ON users.user_id=licences.licence_userId WHERE licences.licence_userId='".$userId."'");
+        }
+        return $data;
+    }
+
+    public function getSearched($val,$type) {
+        $userId=$_SESSION['activeUser']['user_id'];
+        $data=$this->select("SELECT * FROM `licences` JOIN users ON users.user_id=licences.licence_userId WHERE licences.licence_userId='".$userId."' AND `".$type."`='".$val."'");
         return $data;
     }
 }
