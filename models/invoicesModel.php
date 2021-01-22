@@ -18,6 +18,11 @@ class invoicesModel extends Model{
   
     }
     
+    public function del($id) {
+        $q="DELETE FROM `invoices` WHERE `invoices`.`invoice_id` = '".$id."'";
+        $this->insert($q);
+    }
+
     public function getAll() {
         $userId=$_SESSION['activeUser']['user_id'];
         $userRole=$_SESSION['activeUser']['user_role'];

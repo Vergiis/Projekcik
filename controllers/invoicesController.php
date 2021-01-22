@@ -4,7 +4,7 @@ class invoicesController extends Controller{
         $model=$this->loadModel('invoices'); 
         $model->add($_FILES['file']['tmp_name'],$_FILES['file']['name'],$_POST['invoice_type'],$_POST['invoice_identifier'],$_POST['client_vatId'],$_POST['invoice_nettoValue'],$_POST['invoice_vat'],$_POST['invoite_bruttoValue'],$_POST['invoice_currencyType'],$_POST['invoice_convertedValue']);
         
-        $this->redirect("?");
+        $this->redirect("?task=myInvoices&action=getAll");
     }
 
     public function getAll(){
@@ -28,6 +28,13 @@ class invoicesController extends Controller{
 
     public function openInvoices(){
         $this->redirect($_POST['details']);
+    }
+
+    public function delInvoices(){
+        $model=$this->loadModel('invoices'); 
+        $model->del($_POST['details']);
+        
+        $this->redirect("?task=myInvoices&action=getAll");
     }
 
     public function getStats(){

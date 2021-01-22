@@ -9,6 +9,11 @@ class licencesModel extends Model{
         $this->insert($q);
     }
     
+    public function del($id) {
+        $q="DELETE FROM `licences` WHERE `licences`.`licence_id` = '".$id."'";
+        $this->insert($q);
+    }
+
     public function getAll() {
         $userId=$_SESSION['activeUser']['user_id'];
         $userRole=$_SESSION['activeUser']['user_role'];

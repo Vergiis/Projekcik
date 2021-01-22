@@ -1,4 +1,5 @@
 <div id="panel">
+    <h1>Dodaj sprzęt</h1>
     <form action="?task=addDevices&action=addNew" method="post">
         <label for="device_code" id="device_code_label">Numer inwantarzowy:</label>
         <input type="text" id="device_code" name="device_code" class="myinput" required>

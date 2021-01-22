@@ -7,6 +7,13 @@ class licencesController extends Controller{
         $this->redirect("?task=myLicences&action=getAll");
     }
 
+    public function delLicences(){
+        $model=$this->loadModel('licences'); 
+        $model->del($_POST['details']);
+        
+        $this->redirect("?task=myLicences&action=getAll");
+    }
+
     public function getAll(){
         $model=$this->loadModel('licences'); 
         $data=$model->getAll();

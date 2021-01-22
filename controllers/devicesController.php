@@ -7,6 +7,13 @@ class devicesController extends Controller{
         $this->redirect("?task=myDevices&action=getAll");
     }
 
+    public function delDevices(){
+        $model=$this->loadModel('devices'); 
+        $model->del($_POST['details']);
+        
+        $this->redirect("?task=myDevices&action=getAll");
+    }
+
     public function getAll(){
         $model=$this->loadModel('devices'); 
         $data=$model->getAll();

@@ -1,4 +1,5 @@
 <div id="panel">
+<h1>Dodaj licencje</h1>
     <form action="?task=addLicences&action=addNew" method="post">
             <label for="licence_number" id="licence_number_label">Numer inwantarzowy:</label>
             <input type="text" id="licence_number" name="licence_number" class="myinput" required>

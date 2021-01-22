@@ -1,4 +1,5 @@
 <div id="panel">
+<h1>Dodaj fakture</h1>
     <form action="?task=addInvoices&action=addNew" method="post" enctype="multipart/form-data">
         <label>Typ Faktury:</label><br/>
         <label for="buy">Kupna</label>
