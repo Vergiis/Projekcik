@@ -1,2 +1,2 @@
-# Projekcik
-Proszę o niepodpierdalanie kodu
+# Projekcik ZUT
+
